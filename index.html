@@ -87,6 +87,7 @@
       text-decoration: none;
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
     .script-logo {
       font-family: 'Dancing Script', cursive;
@@ -183,8 +184,15 @@
       .topnav { padding: 10px 4%; }
     }
     @media (max-width: 480px) {
-      .script-logo { font-size: 1.5rem; }
-      .nav-logo small { font-size: 9px; }
+      .script-logo { 
+        font-size: 1.6rem; 
+      }
+      .nav-logo small { 
+        font-size: 9px; 
+      }
+      .nav-logo {
+        max-width: 160px;
+      }
     }
 
     /* ========== HERO (MOBILE FIRST) ========== */
