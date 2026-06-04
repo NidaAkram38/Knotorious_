@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Knotorious — Handmade crochet bouquets, keychains, accessories and custom gifts. Handcrafted with love in Pakistan.">
+  <title>Knotorious 🌸 — Handmade Crochet | Too knottty to ignore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===================== LOADER ===================== -->
+<div class="yarn-loader" id="loader">
+  <div style="text-align:center">
+    <span style="font-size:3rem">🧶</span>
+    <div style="font-family:'Dancing Script';font-size:1.8rem;color:var(--pink)">Knotorious</div>
+  </div>
+</div>
+
+<!-- ===================== ANNOUNCEMENT BAR ===================== -->
+<div class="ann-bar">
+  ✨ Advance payment required — No COD | Handmade with love | WhatsApp: 0328-7611968 ✨
+</div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="topnav" id="topnav">
+  <a href="#" class="nav-logo">
+    <span class="script-logo">Knotorious</span>
+    <small>Handmade Crochet</small>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#keychains">Keychains</a></li>
+    <li><a href="#flowers">Flowers & Bouquets</a></li>
+    <li><a href="#others">Others</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-btn" id="cartBtn">
+      🛒<span class="cart-count" id="cartCountBadge">0</span>
+    </button>
+    <button class="ham" id="hamBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="mobileDrawer">
+  <a href="#">Home</a>
+  <a href="#keychains">Keychains</a>
+  <a href="#flowers">Flowers & Bouquets</a>
+  <a href="#others">Others</a>
+  <a href="#faq">FAQ</a>
+  <a href="#" id="drawerCart">Cart 🛒</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text fade">
+        <h1>Handmade Crochet <em>With Love,</em><br>One Stitch At A Time</h1>
+        <p>Unique handmade crochet — bouquets, keychains, accessories & custom gifts. Made fresh for every order.</p>
+        <div class="hero-btns">
+          <a href="#keychains" class="btn btn-pink">Shop Keychains</a>
+          <a href="#flowers" class="btn btn-pink">Shop Bouquets</a>
+        </div>
+        <div class="production-note">
+          🧵 <strong>Note:</strong> Every item is handmade just for you. Orders take <strong>7–14 days</strong> to craft and dispatch.
+        </div>
+      </div>
+      <div class="hero-visual fade">
+        <img src="images/knotorious logo.jpeg" style="border-radius:40px;width:100%;max-width:400px;margin:0 auto;box-shadow:var(--shadow2)" alt="Knotorious crochet bouquet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KEYCHAINS ===================== -->
+<section id="keychains" class="section" style="background:var(--cream2)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">🔑 Cute & Tiny</span>
+      <h2 class="sec-title">Crochet Keychains</h2>
+      <div>🌸 🌸 🌸</div>
+      <p class="section-desc">Adorable handmade keychains starting from Rs.199</p>
+    </div>
+    <div class="products-grid" id="keychainsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== FLOWERS & BOUQUETS ===================== -->
+<section id="flowers" class="section" style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">💐 Forever Blooms</span>
+      <h2 class="sec-title">Flowers & Bouquets</h2>
+      <div>🌻 🌹 🌷</div>
+      <p class="section-desc">Handcrafted bouquets and single flowers — never wilt, always loved</p>
+    </div>
+    <div class="products-grid" id="flowersGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ACCESSORIES ===================== -->
+<section id="others" class="section" style="background:var(--cream2)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">🎀 More Love</span>
+      <h2 class="sec-title">Accessories & Home Decor</h2>
+      <div>🧸 🎁 🧶</div>
+      <p class="section-desc">Bookmarks, bandanas, pouches, wall hangings & more</p>
+    </div>
+    <div class="products-grid" id="othersGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="section" style="background:var(--cream)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">FAQ</span>
+      <h2 class="sec-title">You Asked, We Answered</h2>
+    </div>
+    <div style="max-width:700px;margin:0 auto">
+      <div style="border-bottom:1px solid var(--border);padding:16px 0">
+        <strong>⏱️ How long does delivery take?</strong>
+        <p style="color:var(--text3);margin-top:6px">7–14 days for handmade crafting + shipping.</p>
+      </div>
+      <div style="border-bottom:1px solid var(--border);padding:16px 0">
+        <strong>💸 Payment methods?</strong>
+        <p style="color:var(--text3);margin-top:6px">Advance payment via<br><strong>NayaPay: 0328-7611968</strong><br><strong>EasyPaisa / JazzCash / SadaPay: 0332-0457157</strong></p>
+      </div>
+      <div style="padding:16px 0">
+        <strong>🎨 Custom orders?</strong>
+        <p style="color:var(--text3);margin-top:6px">Absolutely! DM on Instagram @knotorious.handmade or WhatsApp 0328-7611968.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CHECKOUT MODAL ===================== -->
+<div class="checkout-overlay" id="checkoutModal">
+  <div class="checkout-modal">
+    <button class="close-modal" id="closeCheckoutBtn">✕</button>
+    <h2>Complete Your Order 💐</h2>
+    <div style="color:var(--text3);margin-bottom:12px">Fill your details — we'll confirm on WhatsApp</div>
+    <div class="order-summary-mini" id="checkoutOrderSummary"></div>
+    <form id="orderForm">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="custName" required placeholder="e.g. Ayesha Khan">
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" id="custPhone" required placeholder="03XX-XXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>Delivery Address *</label>
+        <textarea id="custAddress" rows="2" required placeholder="House #, Street, Area"></textarea>
+      </div>
+      <div class="form-group">
+        <label>City *</label>
+        <input type="text" id="custCity" required placeholder="e.g. Lahore">
+      </div>
+      
+      <!-- PAYMENT METHOD SECTION -->
+      <div class="form-group">
+        <label>Payment Method</label>
+        <div class="payment-methods" id="paymentMethods">
+          <div data-method="EasyPaisa" class="payment-method">EasyPaisa</div>
+          <div data-method="JazzCash"  class="payment-method">JazzCash</div>
+          <div data-method="SadaPay"   class="payment-method">SadaPay</div>
+          <div data-method="NayaPay"   class="payment-method">NayaPay</div>
+        </div>
+        <input type="hidden" id="selectedPayment" value="EasyPaisa">
+        
+        <!-- PAYMENT DETAILS WILL APPEAR HERE -->
+        <div id="paymentInfo"></div>
+      </div>
+      
+      <button type="submit" class="btn btn-pink" style="width:100%;margin-top:12px;display:flex;justify-content:center;align-items:center;text-align:center">Place Order 🎀</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="script-logo">Knotorious</span>
+        <p>Handmade crochet with love — Pakistan</p>
+        <p>📷 @knotorious.handmade</p>
+      </div>
+      <div class="footer-col">
+        <h5>Payments</h5>
+        <ul>
+          <li>💚 NayaPay: 0328-7611968</li>
+          <li>📱 EasyPaisa: 0332-0457157</li>
+          <li>🎵 JazzCash / SadaPay: 0332-0457157</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>📱 WhatsApp: 0328-7611968</li>
+          <li>📧 DM on Instagram @knotorious.handmade</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Knotorious — "Too knottty to ignore" 🇵🇰</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top -->
+<button id="scrollTop">↑</button>
+<!-- Toast notification -->
+<div id="toast" class="toast"></div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+
+<script>
+// ===========================
+//  KNOTORIOUS — cart.js
+//  Cart + Checkout logic
+// ===========================
+
+// ---- Cart State ----
+let cart = JSON.parse(localStorage.getItem('knot_cart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('knot_cart', JSON.stringify(cart));
+  updateCartUI();
+}
+
+function addToCart(id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  if (!p) return;
+  const existing = cart.find(i => i.id === id);
+  if (existing) existing.qty += 1;
+  else cart.push({ id, qty: 1 });
+  saveCart();
+  showToast(`✓ ${p.name} added to cart`);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+}
+
+function cartCount() {
+  return cart.reduce((s, i) => s + i.qty, 0);
+}
+
+function updateCartUI() {
+  const count = cartCount();
+  document.querySelectorAll('.cart-count').forEach(el => {
+    el.textContent = count;
+    el.style.display = count > 0 ? 'flex' : 'none';
+  });
+}
+
+// ---- Toast ----
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ---- Payment Details ----
+function getPaymentDetails(method) {
+  const baseDetails = {
+    accountName: "Nida Akram",
+    whatsapp: "0328-7611968",
+    instagram: "@knotorious.handmade",
+    instagramLink: "https://www.instagram.com/knotorious.handmade?igsh=dmJiYTY4eXhlODky"
+  };
+  
+  const methodDetails = {
+    easypaisa: {
+      number: "0332-0457157",
+      instructions: "Open Easypaisa app → Send Money → Enter above number → Pay amount"
+    },
+    jazzcash: {
+      number: "0332-0457157",
+      instructions: "Open JazzCash app → Send Money → Enter above number → Pay amount"
+    },
+    sadapay: {
+      number: "0332-0457157",
+      instructions: "Open SadaPay app → Send Money → Enter above number → Pay amount"
+    },
+    nayapay: {
+      number: "0328-7611968",
+      instructions: "Open NayaPay app → Send Money → Enter above number → Pay amount"
+    }
+  };
+  
+  return { ...baseDetails, ...methodDetails[method] };
+}
+
+function updatePaymentDetails() {
+  const method = selectedPayment.toLowerCase();
+  const details = getPaymentDetails(method);
+  const paymentInfoDiv = document.getElementById('paymentInfo');
+  
+  if (paymentInfoDiv) {
+    paymentInfoDiv.innerHTML = `
+      <div style="background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%); padding: 18px; border-radius: 12px; margin-top: 15px; border: 2px solid #ff6b6b; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <div style="font-weight: bold; margin-bottom: 12px; color: #ff6b6b; font-size: 16px;">💳 Payment Details:</div>
+        
+        <div style="margin-bottom: 10px; padding: 8px; background: #f0f0f0; border-radius: 8px;">
+          <span style="font-weight: 600;">👤 Account Name:</span> ${details.accountName}
+        </div>
+        
+        <div style="margin-bottom: 10px; padding: 8px; background: #f0f0f0; border-radius: 8px;">
+          <span style="font-weight: 600;">📱 ${method.toUpperCase()} Number:</span> ${details.number}
+        </div>
+        
+        <div style="font-size: 13px; color: #666; margin-top: 8px; padding: 10px; background: #fff3cd; border-radius: 8px; border-left: 3px solid #ffc107;">
+          📝 ${details.instructions}
+        </div>
+        
+        <div style="font-size: 13px; margin-top: 12px; padding: 10px; background: #e8f4f8; border-radius: 8px; border-left: 3px solid #17a2b8;">
+          📸 After payment, take screenshot and send here:
+          <div style="margin-top: 8px; font-weight: 500;">
+            • <a href="https://wa.me/923287611968" target="_blank" style="color: #25D366; text-decoration: none; font-weight: bold;">📲 WhatsApp: ${details.whatsapp} - Click to chat</a><br>
+            • <a href="${details.instagramLink}" target="_blank" style="color: #E4405F; text-decoration: none; font-weight: bold;">📸 Instagram: ${details.instagram} (DM) - Click to DM</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+// ---- Checkout Modal ----
+let selectedPayment = "EasyPaisa";
+
+function openCheckout() {
+  if (cart.length === 0) { showToast('Cart is empty. First add some items 🛒'); return; }
+
+  const subtotal = cart.reduce((s, i) => {
+    const p = PRODUCTS.find(p => p.id === i.id);
+    return s + (p?.salePrice || 0) * i.qty;
+  }, 0);
+  const total = subtotal + 350;
+
+  const itemsHtml = cart.map(i => {
+    const p = PRODUCTS.find(p => p.id === i.id);
+    return `<div>• ${p?.name} ×${i.qty} = Rs.${((p?.salePrice || 0) * i.qty).toLocaleString()}</div>`;
+  }).join('');
+
+  const summary = document.getElementById('checkoutOrderSummary');
+  if (summary) {
+    summary.innerHTML = `
+      <strong>Your Order:</strong>${itemsHtml}
+      <div style="margin-top:8px;font-weight:bold">
+        Subtotal: Rs.${subtotal.toLocaleString()}<br>
+        Delivery: Rs.350<br>
+        <span style="font-size:1.05rem;color:var(--pink)">Total: Rs.${total.toLocaleString()}</span>
+      </div>
+      <small>⏱️ Handmade: 7–14 days</small>`;
+  }
+
+  document.getElementById('checkoutModal')?.classList.add('open');
+  updatePaymentDetails();
+}
+
+// ---- Order Submit → WhatsApp ----
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartUI();
+
+  // Payment method selection
+  document.querySelectorAll('.payment-method').forEach(el => {
+    el.addEventListener('click', function () {
+      document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedPayment = this.dataset.method;
+      document.getElementById('selectedPayment').value = selectedPayment;
+      updatePaymentDetails();
+    });
+  });
+  document.querySelector('.payment-method')?.classList.add('selected');
+
+  // Cart button → open checkout
+  document.getElementById('cartBtn')?.addEventListener('click', e => { e.preventDefault(); openCheckout(); });
+  document.getElementById('drawerCart')?.addEventListener('click', e => { e.preventDefault(); openCheckout(); });
+
+  // Close modal
+  document.getElementById('closeCheckoutBtn')?.addEventListener('click', () =>
+    document.getElementById('checkoutModal')?.classList.remove('open'));
+  document.getElementById('checkoutModal')?.addEventListener('click', e => {
+    if (e.target === document.getElementById('checkoutModal'))
+      document.getElementById('checkoutModal').classList.remove('open');
+  });
+
+  // Order form submit
+  document.getElementById('orderForm')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const name    = document.getElementById('custName').value.trim();
+    const phone   = document.getElementById('custPhone').value.trim();
+    const address = document.getElementById('custAddress').value.trim();
+    const city    = document.getElementById('custCity').value.trim();
+    if (!name || !phone || !address || !city) { showToast('Fill all fields first!'); return; }
+
+    const subtotal = cart.reduce((s, i) => {
+      const p = PRODUCTS.find(p => p.id === i.id);
+      return s + (p?.salePrice || 0) * i.qty;
+    }, 0);
+    const total = subtotal + 350;
+    const itemsList = cart.map(i => {
+      const p = PRODUCTS.find(p => p.id === i.id);
+      return `${p?.name} ×${i.qty} = Rs.${(p?.salePrice || 0) * i.qty}`;
+    }).join('\n');
+
+    const details = getPaymentDetails(selectedPayment.toLowerCase());
+    const message = `🛍️ *NEW ORDER - KNOTORIOUS* 🧶\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Address:* ${address}, ${city}\n\n*Items:*\n${itemsList}\n\n📦 Delivery: Rs.350\n💰 *Total: Rs.${total}*\n💳 Payment: ${selectedPayment}\n\n💵 Payment Details:\nAccount: ${details.accountName}\n${method.toUpperCase()} Number: ${details.number}\nWhatsApp: ${details.whatsapp}\nInstagram: ${details.instagram}`;
+
+    window.open(`https://wa.me/923287611968?text=${encodeURIComponent(message)}`, '_blank');
+    cart = [];
+    saveCart();
+    document.getElementById('checkoutModal')?.classList.remove('open');
+    showToast('✅ Order send ho gaya! Payment screenshot zaroor bhejein!');
+    document.getElementById('orderForm').reset();
+  });
+});
+
+// Global expose
+window.addToCart = addToCart;
+window.removeFromCart = removeFromCart;
+window.openCheckout = openCheckout;
+</script>
+
+</body>
+</html>

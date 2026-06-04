@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Knotorious | Handmade Crochet</title>
+  <meta name="description" content="Handmade crochet gifts, bouquets, keychains and accessories. Custom orders available. Delivery 7-14 days nationwide Pakistan.">
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fff9f7;
+      color: #3b2a2a;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --sage: #9caea9;
+      --cream: #fef8f0;
+      --beige: #f3e9dd;
+      --soft-brown: #b48c6c;
+      --gold: #d4af7a;
+      --pink-soft: #fbe9f0;
+      --pink-accent: #e7b9ce;
+      --charcoal: #2f2e2e;
+      --shadow-sm: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header {
+      background: #ffffffd9;
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+      border-bottom: 1px solid #f0e2da;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #b48c6c, #e7b9ce);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-accent);
+    }
+
+    .cart-icon, .wishlist-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -12px;
+      background: var(--pink-accent);
+      color: #3b2a2a;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 30px;
+    }
+
+    .search-bar {
+      display: flex;
+      background: var(--cream);
+      border-radius: 40px;
+      padding: 6px 14px;
+      gap: 8px;
+    }
+
+    .search-bar input {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 0.85rem;
+      width: 180px;
+    }
+
+    .hero {
+      background: linear-gradient(97deg, #fce8ef 0%, #fff3ed 100%);
+      border-radius: 2rem;
+      margin: 32px 0;
+      padding: 60px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #4a3b2c;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin: 20px 0;
+      color: #6b5342;
+    }
+
+    .btn {
+      background: var(--sage);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      transition: 0.2s;
+      display: inline-block;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .btn-primary {
+      background: #b48c6c;
+    }
+
+    .btn-primary:hover {
+      background: #9e765a;
+      transform: translateY(-2px);
+    }
+
+    .hero-image img {
+      width: 280px;
+      border-radius: 32px;
+      object-fit: cover;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 48px 0 24px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    .cat-card {
+      background: white;
+      padding: 18px 8px;
+      text-align: center;
+      border-radius: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 1px solid #f7e3db;
+    }
+
+    .cat-card i {
+      font-size: 2rem;
+      color: var(--pink-accent);
+      margin-bottom: 8px;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 28px;
+      margin: 32px 0;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+      border: 1px solid #f4e4dc;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 220px;
+      background: #f7ede8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .price {
+      color: var(--soft-brown);
+      font-weight: 700;
+      margin: 8px 0;
+    }
+
+    .qty-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .qty-selector button {
+      background: #f1e2da;
+      border: none;
+      width: 28px;
+      border-radius: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .add-to-cart {
+      background: #e7b9ce;
+      color: #3b2a2a;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 40px;
+      width: 100%;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .add-to-cart:hover {
+      background: #dba5bc;
+    }
+
+    .reviews {
+      background: var(--beige);
+      border-radius: 2rem;
+      padding: 48px 24px;
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .review-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      max-width: 280px;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 18px;
+      margin: 28px 0;
+    }
+
+    .insta-item {
+      background: #ecd9cf;
+      border-radius: 28px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .insta-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .footer {
+      background: #2c2a29;
+      color: #f0e2da;
+      padding: 40px 0;
+      margin-top: 64px;
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    .footer a {
+      color: #f0cfbc;
+    }
+
+    .cart-page {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 28px;
+      border: 1px solid #e7cfc2;
+      background: #fffcf9;
+      margin: 8px 0;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-row > div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    button {
+      background: var(--sage);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .delivery-note {
+      background: #fce8ef;
+      padding: 15px;
+      border-radius: 20px;
+      margin: 15px 0;
+      font-size: 0.9rem;
+    }
+
+    .order-summary-card {
+      background: #fef6f2;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <div class="logo">Knotorious ♡</div>
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search crochet...">
+      </div>
+      <div class="nav-links">
+        <a data-nav="home">Home</a>
+        <a data-nav="shop">Shop</a>
+        <a data-nav="faq">FAQ</a>
+        <a data-nav="contact">Contact</a>
+        <div class="cart-icon" id="cartIconBtn">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+        <div class="wishlist-icon"><i class="far fa-heart"></i></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="app">
+  <!-- HOMEPAGE -->
+  <div id="homePage">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Handcrafted With Love,<br>One Stitch At A Time</h1>
+          <p>Unique crochet creations made specially for your loved ones.</p>
+          <button class="btn btn-primary" id="heroShopBtn">Shop Now →</button>
+        </div>
+        <div class="hero-image">
+          <img src="C:\Users\lenovo\Desktop\wee\Knotorious_handmade\knotorious logo.jpeg" alt="handmade crochet flowers">
+        </div>
+      </div>
+
+      <h2 class="section-title">Featured Categories</h2>
+      <div class="categories-grid" id="categoriesGrid"></div>
+
+      <h2 class="section-title">Our Bestsellers</h2>
+      <div class="products-grid" id="featuredProducts"></div>
+
+      <div class="reviews">
+        <h3>❤️ Happy Customers</h3>
+        <div class="review-grid">
+          <div class="review-card"><i class="fas fa-star" style="color:gold"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Absolutely beautiful bouquet! exceeded expectations."</p><b>- Ayesha</b></div>
+          <div class="review-card"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"The bandana quality is amazing. Loved the packaging!"</p><b>- Zara</b></div>
+          <div class="review-card"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Custom order was perfect, they made exactly what I asked!"</p><b>- Hira</b></div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Instagram Gallery</h2>
+      <div class="insta-grid" id="instaGallery"></div>
+      <div style="text-align:center; margin: 20px 0"><a href="https://instagram.com/knotorious.handmade" target="_blank" class="btn" style="background:#e7b9ce; color:#3b2a2a;"><i class="fab fa-instagram"></i> Order Through Instagram</a></div>
+    </div>
+  </div>
+
+  <!-- SHOP PAGE -->
+  <div id="shopPage" class="container hidden">
+    <h2 class="section-title">All Crochet Treasures</h2>
+    <div class="products-grid" id="allProductsGrid"></div>
+  </div>
+
+  <!-- CART PAGE WITH ENHANCED ORDER FORM -->
+  <div id="cartPage" class="container hidden">
+    <div class="cart-page">
+      <h2>Your Cart <i class="fas fa-shopping-bag"></i></h2>
+      <div id="cartItemsList"></div>
+      <div id="cartTotal" style="font-weight:bold; margin:20px 0;"></div>
+      <div id="orderFormSection" class="hidden">
+        <h3>📝 Complete Your Order Details</h3>
+        
+        <div class="form-row">
+          <div><input type="text" id="customerName" placeholder="Full Name *" required></div>
+          <div><input type="tel" id="phoneNumber" placeholder="Phone Number (WhatsApp) *" required></div>
+        </div>
+        
+        <div class="form-row">
+          <div><input type="text" id="deliveryAddress" placeholder="Delivery Address (Street, Area, City) *" required></div>
+          <div><input type="text" id="postalCode" placeholder="Postal Code (Optional)"></div>
+        </div>
+
+        <!-- Product dropdown for additional items (if customer wants to add more) -->
+        <div class="form-row">
+          <div>
+            <select id="extraProductSelect">
+              <option value="">-- Add another product (optional) --</option>
+              <option value="Crochet Rose Bouquet - 2200 PKR">Crochet Rose Bouquet - 2200 PKR</option>
+              <option value="Crochet Tulip Bouquet - 2200 PKR">Crochet Tulip Bouquet - 2200 PKR</option>
+              <option value="Crochet Sunflower Bouquet - 2200 PKR">Crochet Sunflower Bouquet - 2200 PKR</option>
+              <option value="Crochet Single Rose - 800 PKR">Crochet Single Rose - 800 PKR</option>
+              <option value="Crochet Sunflower - 550 PKR">Crochet Sunflower - 550 PKR</option>
+              <option value="Crochet Tulip - 650 PKR">Crochet Tulip - 650 PKR</option>
+              <option value="Crochet Bookmark - 250 PKR">Crochet Bookmark - 250 PKR</option>
+              <option value="Crochet Keychain - 300 PKR">Crochet Keychain - 300 PKR</option>
+              <option value="Crochet Bandana - 750 PKR">Crochet Bandana - 750 PKR</option>
+              <option value="Custom Order (will discuss details)">Custom Order (will discuss details)</option>
+            </select>
+          </div>
+          <div>
+            <select id="extraProductQty">
+              <option value="1">Quantity: 1</option>
+              <option value="2">Quantity: 2</option>
+              <option value="3">Quantity: 3</option>
+              <option value="4">Quantity: 4</option>
+              <option value="5">Quantity: 5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="delivery-note">
+          <i class="fas fa-truck"></i> <strong>📦 Delivery Timeline:</strong> 7-14 days<br>
+          <span style="font-size:0.85rem;">(As products are handmade, it takes a little more time. We will make sure to deliver it as soon as possible!)</span>
+          <br><br>
+          <i class="fas fa-globe"></i> <strong>Delivery:</strong> Nationwide within Pakistan — Delivery charges Rs. 200<br>
+          <i class="fas fa-credit-card"></i> <strong>Payment:</strong> Advance payment only (No COD) — Easypaisa/JazzCash/SadaPay: 03320457157 | Nayapay: 03287611968<br>
+          <i class="fas fa-ban"></i> <strong>No returns</strong> as all orders are handmade with love.
+        </div>
+
+        <button id="placeOrderBtn" class="btn btn-primary">📲 Place Order → Send via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ PAGE -->
+  <div id="faqPage" class="container hidden">
+    <div class="cart-page">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="delivery-note" style="background:#f3e9dd">
+        <p><strong>📦 Delivery Time?</strong> 7-14 days across Pakistan. Handmade items need extra care and time.</p>
+        <p><strong>💰 Delivery Charges?</strong> Flat Rs. 200 nationwide.</p>
+        <p><strong>🔄 Returns?</strong> No returns or exchanges — each piece is handmade just for you.</p>
+        <p><strong>✨ Custom Orders?</strong> Yes! Use the form below or DM on Instagram.</p>
+      </div>
+      <h3>✨ Custom Order Request</h3>
+      <input type="text" id="customName" placeholder="Your Name">
+      <input type="text" id="customDetails" placeholder="Describe your custom crochet item (colors, type, size)">
+      <button id="sendCustomBtn" class="btn">Send via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contactPage" class="container hidden">
+    <div class="cart-page">
+      <h2>Contact Knotorious</h2>
+      <p><i class="fab fa-instagram"></i> Instagram: <strong>@knotorious.handmade</strong></p>
+      <p><i class="fab fa-whatsapp"></i> WhatsApp: <strong>+92 328 7611968</strong></p>
+      <p><i class="fas fa-envelope"></i> Email: hello@knotorious.com</p>
+      <p><i class="fas fa-phone"></i> Payment Support: 03320457157 (Easypaisa/JazzCash) | 03287611968 (Nayapay)</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div>© Knotorious — handmade crochet with love</div>
+    <div><i class="fab fa-instagram"></i> <a href="https://instagram.com/knotorious.handmade" target="_blank">@knotorious.handmade</a> | <i class="fab fa-whatsapp"></i> <a href="https://wa.me/923287611968" target="_blank">+92 328 7611968</a></div>
+  </div>
+</footer>
+
+<script>
+  // PRODUCT DATABASE with REAL crochet images
+  const products = [
+    { id:5, name:"Crochet Lavender Bouquet", category:"Bouquet", price:2200, desc:"Lavender bunch", img:"https://images.pexels.com/photos/6724896/pexels-photo-6724896.jpeg?auto=compress&cs=tinysrgb&w=300", tags:["lavender"] },
+    { id:6, name:"Crochet Single Rose", category:"Single Flower", price:800, desc:"Elegant rose", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\rose.jpeg", tags:["rose"] },
+    { id:7, name:"Crochet Sunflower", category:"Single Flower", price:550, desc:"Sunny sunflower", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\sunflower.jpeg", tags:["sunflower"] },
+    { id:8, name:"Crochet Tulip", category:"Single Flower", price:650, desc:"Elegant tulip", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\tulip.jpeg", tags:["tulip"] },
+    { id:9, name:"Crochet Daisy", category:"Single Flower", price:550, desc:"Lovely daisy", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\daisy.jpeg", tags:["daisy"] },
+    { id:10, name:"Crochet Bookmark", category:"Bookmarks", price:250, desc:"Bookish charm", img:"https://images.pexels.com/photos/3520783/pexels-photo-3520783.jpeg?auto=compress&cs=tinysrgb&w=300", tags:["bookmark"] },
+    { id:11, name:"Crochet Bee Keychain", category:"Keychains", price:300, desc:"Bee keychain", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\bee.jpeg", tags:["keychain"] },
+    { id:12, name:"Crochet Strawberry Keychain", category:"Keychains", price:300, desc:"Strawberry keychain", img:"https://images.pexels.com/photos/4473497/pexels-photo-4473497.jpeg?auto=compress&cs=tinysrgb&w=300", tags:["keychain"] },
+    { id:13, name:"Crochet Bandana", category:"Hair Accessories", price:750, desc:"Cotton bandana", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\bandana.jeg.jpeg", tags:["bandana"] },
+    { id:14, name:"Crochet Gift Box", category:"Gift Sets", price:999, desc:"Mini bouquet gift", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\two.jpeg", tags:["gift"] },
+    { id:15, name:"Custom Crochet Order", category:"Custom Orders", price:0, desc:"Personalized just for you", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\six.jpeg", tags:["custom"] },
+    { id:16, name:"Small Bouquet (2 flowers)", category:"Bouquet", price:999, desc:"1 rose + 1 tulip wrapped", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\two.jpeg", tags:["bouquet"] },
+    { id:17, name:"Medium Bouquet (4 flowers)", category:"Bouquet", price:2200, desc:"2 roses, tulip, sunflower", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\four.jpeg", tags:["bouquet"] },
+    { id:18, name:"Big Bouquet (6 flowers)", category:"Bouquet", price:4500, desc:"Premium arrangement", img:"C:\Users\lenovo\Desktop\wee\Knotorious_handmade\six.jpeg", tags:["bouquet"] },
+    { id:19, name:"Crochet Lily Flower", category:"Single Flower", price:750, desc:"Lily crochet", img:"https://images.pexels.com/photos/6258213/pexels-photo-6258213.jpeg?auto=compress&cs=tinysrgb&w=300", tags:["lily"] },
+    { id:20, name:"Mini Cupcake Keychain", category:"Keychains", price:400, desc:"Cute cupcake keychain", img:"https://images.pexels.com/photos/4474031/pexels-photo-4474031.jpeg?auto=compress&cs=tinysrgb&w=300", tags:["keychain"] }
+  ];
+
+  let cart = JSON.parse(localStorage.getItem('knotorious_cart')) || [];
+  let currentPage = "home";
+
+  function saveCart() { localStorage.setItem('knotorious_cart', JSON.stringify(cart)); updateCartBadge(); }
+  function updateCartBadge() { document.getElementById('cartCount').innerText = cart.reduce((sum,i)=>sum+i.qty,0); }
+
+  function renderCartPage() {
+    const container = document.getElementById('cartItemsList');
+    const totalSpan = document.getElementById('cartTotal');
+    if(!container) return;
+    if(cart.length===0){ container.innerHTML="<p>Your cart is empty. Add some crochet love! 🧶</p>"; totalSpan.innerHTML=""; document.getElementById('orderFormSection').classList.add('hidden'); return; }
+    let html = "";
+    let total = 0;
+    cart.forEach((item,idx)=>{
+      const prod = products.find(p=>p.id===item.id);
+      if(prod && prod.price > 0){
+        total += prod.price * item.qty;
+        html += `<div class="cart-item">
+          <div><strong>${prod.name}</strong><br>${prod.price} PKR × ${item.qty}</div>
+          <div>
+            <button class="remove-item" data-idx="${idx}">Remove</button>
+            <button class="inc-qty" data-id="${item.id}">+</button>
+            <button class="dec-qty" data-id="${item.id}">-</button>
+          </div>
+        </div>`;
+      }
+    });
+    totalSpan.innerHTML = `<strong>Subtotal: ${total} PKR</strong><br>Delivery (Nationwide): 200 PKR<br><strong>Total: ${total+200} PKR</strong>`;
+    container.innerHTML = html;
+    document.getElementById('orderFormSection').classList.remove('hidden');
+    document.querySelectorAll('.remove-item').forEach(btn=>btn.addEventListener('click',()=>{ let idx=parseInt(btn.dataset.idx); cart.splice(idx,1); saveCart(); renderCartPage(); }));
+    document.querySelectorAll('.inc-qty').forEach(btn=>btn.addEventListener('click',()=>{ let id=parseInt(btn.dataset.id); let c=cart.find(i=>i.id===id); if(c){c.qty++; saveCart(); renderCartPage();} }));
+    document.querySelectorAll('.dec-qty').forEach(btn=>btn.addEventListener('click',()=>{ let id=parseInt(btn.dataset.id); let c=cart.find(i=>i.id===id); if(c && c.qty>1){c.qty--; saveCart(); renderCartPage();} else if(c && c.qty===1){ let idx2=cart.findIndex(i=>i.id===id); cart.splice(idx2,1); saveCart(); renderCartPage();} }));
+  }
+
+  function addToCart(productId, qty=1){
+    const existing = cart.find(p=>p.id===productId);
+    if(existing) existing.qty += qty;
+    else cart.push({id:productId, qty});
+    saveCart();
+    alert("Added to cart! 🧶");
+  }
+
+  function renderProducts(containerId, filterArray = null) {
+    let prods = filterArray || products;
+    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase();
+    if(searchTerm) prods = prods.filter(p=>p.name.toLowerCase().includes(searchTerm) || p.tags?.some(t=>t.includes(searchTerm)));
+    const grid = document.getElementById(containerId);
+    if(grid){
+      grid.innerHTML = prods.map(p => `
+        <div class="product-card">
+          <div class="product-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+          <div class="product-info">
+            <div class="product-title">${p.name}</div>
+            <div class="price">${p.price === 0 ? "Custom Quote" : p.price + " PKR"}</div>
+            <div class="qty-selector">
+              <button class="qty-down" data-id="${p.id}">-</button>
+              <span class="qty-val" id="qty-${p.id}">1</span>
+              <button class="qty-up" data-id="${p.id}">+</button>
+            </div>
+            <button class="add-to-cart" data-id="${p.id}">Add to Cart</button>
+          </div>
+        </div>
+      `).join('');
+      document.querySelectorAll('.add-to-cart').forEach(btn=>btn.addEventListener('click',(e)=>{ let id=parseInt(btn.dataset.id); let qtySpan=document.getElementById(`qty-${id}`); let qty= qtySpan ? parseInt(qtySpan.innerText) : 1; addToCart(id, qty); }));
+      document.querySelectorAll('.qty-up').forEach(btn=>btn.addEventListener('click',(e)=>{ let id=parseInt(btn.dataset.id); let span=document.getElementById(`qty-${id}`); let val=parseInt(span.innerText); span.innerText=val+1; }));
+      document.querySelectorAll('.qty-down').forEach(btn=>btn.addEventListener('click',(e)=>{ let id=parseInt(btn.dataset.id); let span=document.getElementById(`qty-${id}`); let val=parseInt(span.innerText); if(val>1) span.innerText=val-1; }));
+    }
+  }
+
+  const categoriesList = ["Crochet Bouquets","Single Flowers","Sunflower Collection","Tulip Collection","Rose Collection","Bookmarks","Keychains","Hair Accessories","Bandanas","Custom Orders","Gift Sets"];
+  function buildCategories(){
+    const catDiv = document.getElementById('categoriesGrid');
+    if(catDiv){
+      catDiv.innerHTML = categoriesList.map(c=>`<div class="cat-card"><i class="fas ${c.includes('Bouquet')?'fa-seedling':c.includes('Flowers')?'fa-leaf':'fa-heart'}"></i><div>${c}</div></div>`).join('');
+      document.querySelectorAll('.cat-card').forEach((card,idx)=>{
+        card.addEventListener('click',()=>{
+          document.getElementById('shopPage').classList.remove('hidden');
+          document.getElementById('homePage').classList.add('hidden');
+          currentPage="shop";
+          const filterTag = categoriesList[idx].toLowerCase();
+          let filtered = products.filter(p=> p.category?.toLowerCase().includes(filterTag) || p.name.toLowerCase().includes(filterTag) || p.tags?.some(t=>filterTag.includes(t)));
+          renderProducts('allProductsGrid', filtered);
+        });
+      });
+    }
+  }
+
+  function buildInstaGallery() {
+    const gallery = document.getElementById('instaGallery');
+    if(gallery){
+      const instaImages = [
+        "https://images.pexels.com/photos/6203482/pexels-photo-6203482.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "https://images.pexels.com/photos/6724911/pexels-photo-6724911.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "https://images.pexels.com/photos/6203283/pexels-photo-6203283.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "https://images.pexels.com/photos/6258120/pexels-photo-6258120.jpeg?auto=compress&cs=tinysrgb&w=200"
+      ];
+      gallery.innerHTML = instaImages.map(img => `<div class="insta-item"><img src="${img}" alt="crochet handmade"></div>`).join('');
+    }
+  }
+
+  // PLACE ORDER with all details
+  document.getElementById('placeOrderBtn')?.addEventListener('click',()=>{
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('phoneNumber').value.trim();
+    const address = document.getElementById('deliveryAddress').value.trim();
+    const postal = document.getElementById('postalCode').value.trim();
+    const extraProduct = document.getElementById('extraProductSelect').value;
+    const extraQty = document.getElementById('extraProductQty').value;
+    
+    if(!name || !phone || !address){ alert("❌ Please fill Name, Phone & Delivery Address"); return; }
+    
+    let itemsText = "";
+    let total = 0;
+    cart.forEach(it=>{ let p = products.find(p=>p.id===it.id); if(p && p.price > 0){ itemsText += `✓ ${p.name} x ${it.qty} = ${p.price*it.qty} PKR\n`; total+=p.price*it.qty; } });
+    
+    // Add extra product if selected
+    if(extraProduct){
+      let extraMatch = extraProduct.match(/(\d+)/);
+      let extraPrice = extraMatch ? parseInt(extraMatch[0]) : 0;
+      itemsText += `✓ ${extraProduct} x ${extraQty} = ${extraPrice * parseInt(extraQty)} PKR\n`;
+      total += extraPrice * parseInt(extraQty);
+    }
+    
+    total += 200;
+    const postalText = postal ? `Postal Code: ${postal}\n` : "";
+    const msg = `🪢 *NEW ORDER - KNOTORIOUS* 🪢%0A%0A👤 *Customer:* ${name}%0A📞 *Phone:* ${phone}%0A📍 *Address:* ${address}%0A${postalText}%0A📦 *Order Items:*%0A${itemsText}%0A💰 *Total (inc. Rs.200 delivery)*: ${total} PKR%0A%0A⏰ *Delivery Timeline:* 7-14 days (handmade with care!)%0A💳 *Payment:* Advance via Easypaisa 03320457157 / Nayapay 03287611968%0A🚫 *No returns. Thank you for supporting handmade!*`;
+    
+    const whatsappUrl = `https://wa.me/923287611968?text=${encodeURIComponent(msg)}`;
+    window.open(whatsappUrl, '_blank');
+    alert("✅ Order sent via WhatsApp! Please complete advance payment to confirm your order.\nDelivery: 7-14 days");
+  });
+
+  document.getElementById('sendCustomBtn')?.addEventListener('click',()=>{
+    const cname = document.getElementById('customName').value;
+    const details = document.getElementById('customDetails').value;
+    if(!cname || !details){ alert("Please enter name and custom details"); return; }
+    const msg = `🎨 *CUSTOM ORDER - KNOTORIOUS* 🎨%0AName: ${cname}%0ADetails: ${details}%0AI would love a handmade crochet custom piece!`;
+    window.open(`https://wa.me/923287611968?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  document.getElementById('heroShopBtn')?.addEventListener('click',()=>{ showPage('shop'); renderProducts('allProductsGrid'); });
+  document.getElementById('cartIconBtn')?.addEventListener('click',()=>{ showPage('cart'); renderCartPage(); });
+  document.querySelectorAll('[data-nav]').forEach(link=>{ link.addEventListener('click',()=>{ showPage(link.dataset.nav); if(link.dataset.nav==='shop') renderProducts('allProductsGrid'); if(link.dataset.nav==='cart') renderCartPage(); }); });
+  
+  function showPage(page){
+    document.getElementById('homePage').classList.add('hidden');
+    document.getElementById('shopPage').classList.add('hidden');
+    document.getElementById('cartPage').classList.add('hidden');
+    document.getElementById('faqPage').classList.add('hidden');
+    document.getElementById('contactPage').classList.add('hidden');
+    if(page==='home') document.getElementById('homePage').classList.remove('hidden');
+    if(page==='shop') document.getElementById('shopPage').classList.remove('hidden');
+    if(page==='cart') document.getElementById('cartPage').classList.remove('hidden');
+    if(page==='faq') document.getElementById('faqPage').classList.remove('hidden');
+    if(page==='contact') document.getElementById('contactPage').classList.remove('hidden');
+    currentPage = page;
+  }
+  
+  document.getElementById('searchInput')?.addEventListener('input',()=>{ if(currentPage==='shop') renderProducts('allProductsGrid'); else if(currentPage==='home') renderProducts('featuredProducts', products.slice(0,6)); });
+  
+  renderProducts('featuredProducts', products.slice(0,6));
+  buildCategories();
+  buildInstaGallery();
+  updateCartBadge();
+  renderProducts('allProductsGrid');
+</script>
+</body>
+</html>
