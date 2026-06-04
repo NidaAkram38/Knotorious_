@@ -954,3 +954,49 @@ tbody tr:hover {
     width: 100%;
   }
 }
+
+/* ════════════════════════════════════════════════
+   FIX: KNOTORIOUS LOGO VISIBILITY ON MOBILE
+   ════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Auth page logo fix */
+  .auth-logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .auth-logo .icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  
+  /* Sidebar logo fix */
+  .sidebar-logo span {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  .sidebar-logo .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  /* Make logo text more visible with slight glow */
+  .sidebar-logo span,
+  .auth-logo h1 {
+    text-shadow: 0 0 8px rgba(200, 169, 110, 0.2);
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Extra small devices (max 360px) */
+@media (max-width: 360px) {
+  .auth-logo h1 {
+    font-size: 1rem;
+  }
+  
+  .sidebar-logo span {
+    font-size: 0.85rem;
+  }
+}
