@@ -211,6 +211,35 @@
     }
 
     /* ========== HERO (MOBILE FIRST) ========== */
+    @media (max-width:700px){
+
+  .hero{
+    padding:40px 0;
+  }
+
+  .hero-grid{
+    flex-direction:column-reverse;
+    gap:25px;
+  }
+
+  .hero-text{
+    text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:clamp(2.4rem, 8vw, 3rem);
+    line-height:1.25;
+  }
+
+  .hero-btns{
+    justify-content:center;
+  }
+
+  .hero-visual img{
+    max-width:320px;
+    margin:auto;
+  }
+}
     .container {
       max-width: 1280px;
       margin: 0 auto;

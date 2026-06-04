@@ -457,59 +457,108 @@ input[type="checkbox"] {
   color: var(--danger);
 }
 
-/* Mobile sidebar overlay */
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 99;
+/* =========================
+   MOBILE NAVBAR FIX
+   ========================= */
+
+@media (max-width: 860px) {
+
+  .topnav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+    padding:12px 15px;
+    gap:10px;
+  }
+
+  .nav-logo{
+    flex:1;
+    min-width:0;
+    overflow:hidden;
+  }
+
+  .script-logo{
+    font-size:1.8rem;
+    white-space:nowrap;
+  }
+
+  .nav-logo small{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+  }
+
+  .nav-btn{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    font-size:1.4rem;
+    min-width:40px;
+    min-height:40px;
+  }
+
+  .ham{
+    display:flex;
+    flex-shrink:0;
+  }
 }
 
-/* ── Main Content ── */
-.main-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: var(--bg);
+/* Small Phones */
+@media (max-width: 480px){
+
+  .topnav{
+    padding:10px 12px;
+  }
+
+  .script-logo{
+    font-size:1.55rem;
+  }
+
+  .nav-logo small{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  .nav-btn{
+    font-size:1.3rem;
+  }
+
+  .cart-count{
+    width:16px;
+    height:16px;
+    font-size:10px;
+    top:-5px;
+    right:-8px;
+  }
 }
 
-.content-header {
-  padding: 1.8rem 2rem 1rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--bg);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+/* Very Small Phones */
+@media (max-width: 360px){
 
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text);
-  font-size: 1.4rem;
-  padding: 0.3rem;
-}
+  .script-logo{
+    font-size:1.35rem;
+  }
 
-.content-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: var(--text);
-}
+  .nav-logo small{
+    font-size:7px;
+  }
 
-.header-actions {
-  margin-left: auto;
-  display: flex;
-  gap: 0.6rem;
-}
-
-.content-body {
-  padding: 2rem;
+  .nav-actions{
+    gap:8px;
+  }
 }
 
 /* ════════════════════════════════════════════════
