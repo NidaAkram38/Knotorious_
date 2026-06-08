@@ -41,13 +41,13 @@ body {
 /* Mobile body padding adjustment */
 @media (max-width: 768px) {
   body {
-    padding-top: 90px;
+    padding-top: 98px;
   }
 }
 
 @media (max-width: 480px) {
   body {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 }
 
@@ -125,7 +125,7 @@ input, textarea, select { font-family:var(--font); outline:none; border:none; }
   .topnav {
     padding: 0 20px;
     height: 60px;
-    top: 34px;
+    top: 38px;
   }
 }
 
@@ -133,7 +133,7 @@ input, textarea, select { font-family:var(--font); outline:none; border:none; }
   .topnav {
     padding: 0 12px;
     height: 52px;
-    top: 32px;
+    top: 46px;
   }
 }
 
@@ -281,13 +281,13 @@ input, textarea, select { font-family:var(--font); outline:none; border:none; }
 
 @media (max-width: 768px) {
   .nav-drawer {
-    top: 94px;
+    top: 98px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-drawer {
-    top: 84px;
+    top: 98px;
     padding: 12px 20px 20px;
   }
 }
